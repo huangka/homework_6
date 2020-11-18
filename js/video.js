@@ -97,6 +97,7 @@ document.querySelector("#old").addEventListener("click", function() {
 			video.style.width= newWidth;
 			video.style.border= newBorder;
 			video.style.borderRadius= newBorderRadius;
+			
 		}    
 	}
 	
@@ -123,9 +124,11 @@ document.querySelector("#original").addEventListener("click", function() {
 //Change the volume based on the slider and update the volume information.
 document.querySelector("#volumeSlider").addEventListener("change", function() {
 	let newVol=document.querySelector("#volumeSlider").value;
-	//console.log(newVol);
+	console.log(newVol*0.01);
+	video.volume = newVol*0.01;
 	//console.log(document.getElementById("volume").innerHTML);
 	document.getElementById("volume").innerHTML=newVol + '%';
+	
 
 
 	
