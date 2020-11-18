@@ -86,20 +86,22 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#old").addEventListener("click", function() {
 	//Utilize the existing grayscale class.
-	var styleSheet = document.styleSheets[0]; 
-	for (var i = 0; i < styleSheet.rules.length; i++) {
-		if (styleSheet.rules[i].selectorText === '.oldTime') {
-			var filtercolor = styleSheet.rules[i].style.filter;
-			var newWidth = styleSheet.rules[i].style.width;
-			var newBorder = styleSheet.rules[i].style.border;
-			var newBorderRadius = styleSheet.rules[i].style.borderRadius;
-			video.style.filter= filtercolor;
-			video.style.width= newWidth;
-			video.style.border= newBorder;
-			video.style.borderRadius= newBorderRadius;
+	//var styleSheet = document.styleSheets[0]; 
+	//for (var i = 0; i < styleSheet.rules.length; i++) {
+		//if (styleSheet.rules[i].selectorText === '.oldTime') {
+			//var filtercolor = styleSheet.rules[i].style.filter;
+			//var newWidth = styleSheet.rules[i].style.width;
+			//var newBorder = styleSheet.rules[i].style.border;
+			//var newBorderRadius = styleSheet.rules[i].style.borderRadius;
+			//video.style.filter= filtercolor;
+			//video.style.width= newWidth;
+			//video.style.border= newBorder;
+			//video.style.borderRadius= newBorderRadius;
 			
-		}    
-	}
+		//}    
+	//}
+
+  	video.classList.add("oldTime");
 	
 });
 
@@ -108,17 +110,22 @@ document.querySelector("#old").addEventListener("click", function() {
 
 document.querySelector("#original").addEventListener("click", function() {
 	//Turn off grayscale class.
-	var styleSheet = document.styleSheets[0]; 
-	for (var i = 0; i < styleSheet.rules.length; i++) {
-		if (styleSheet.rules[i].selectorText === 'video') {
-			var newWidth = styleSheet.rules[i].style.width;
-			var newBorder = styleSheet.rules[i].style.border;
-			video.style.filter= "none";
-			video.style.width= newWidth;
-			video.style.border= newBorder;
-			video.style.borderRadius= 0;
-		}    
-	}
+	//var styleSheet = document.styleSheets[0]; 
+	//for (var i = 0; i < styleSheet.rules.length; i++) {
+	//	if (styleSheet.rules[i].selectorText === 'video') {
+	//		var newWidth = styleSheet.rules[i].style.width;
+	//		var newBorder = styleSheet.rules[i].style.border;
+	//		video.style.filter= "none";
+	//		video.style.width= newWidth;
+	//		video.style.border= newBorder;
+	//		video.style.borderRadius= 0;
+	//	}    
+	
+ 
+
+ 
+	//Remove the CSS class using classList.remove()
+	video.classList.remove('oldTime');
 });
 
 //Change the volume based on the slider and update the volume information.
